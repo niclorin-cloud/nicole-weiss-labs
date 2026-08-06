@@ -1,6 +1,6 @@
 # Content System
 
-This is the public release repository for Nicole Weiss's Content System.
+This is the public release repository for Nicole Weiss.
 
 The private working repository is the canonical source for active development.
 This repository contains only material that has passed the project's privacy,
