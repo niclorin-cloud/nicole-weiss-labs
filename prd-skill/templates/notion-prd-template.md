@@ -25,9 +25,17 @@ This is the Notion version of the PRD structure this skill produces. It's writte
 *What outcome does this create, and how does it tie back to the broader roadmap/vision?*
 
 # Features
-- [ ]
-- [ ]
-- [ ]
+- [ ] — Size: `S` `M` `L` `XL`
+- [ ] — Size: `S` `M` `L` `XL`
+- [ ] — Size: `S` `M` `L` `XL`
+
+# Time Estimate
+**Status:** Draft — pending developer confirmation
+*(Update to "Confirmed by [name], [date]" once a developer has reviewed the sizes above — that's what makes this estimate something the team can be held accountable to later.)*
+
+**Legend:** S = 1-2 days · M = 3-5 days · L = 1-2 weeks · XL = 2+ weeks *(consider splitting into smaller features)*
+
+**Total estimate:** *(sum of the sizes above via the legend, e.g. "roughly 2-3 weeks")*
 
 # Dependencies
 *What has to be true, decided, or already built before this can start? Include open questions, not just confirmed facts — an unresolved dependency belongs here, written down, not discovered mid-build.*

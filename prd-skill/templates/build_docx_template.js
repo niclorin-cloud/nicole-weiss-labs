@@ -22,11 +22,26 @@ function heading2(text) {
   return new Paragraph({ heading: HeadingLevel.HEADING_2, spacing: { before: 240, after: 120 }, text });
 }
 
-function checkboxItem() {
+function checkboxItem(sizeSuffix) {
+  const children = [new TextRun({ text: "" })];
+  if (sizeSuffix) {
+    children.push(new TextRun({ text: "  —  Size: ", italics: true, color: "808080" }));
+    children.push(new TextRun({ text: "S   M   L   XL", italics: true, color: "808080" }));
+  }
   return new Paragraph({
     numbering: { reference: "checklist", level: 0 },
     spacing: { after: 80 },
-    children: [new TextRun({ text: "" })],
+    children,
+  });
+}
+
+function labelLine(label, value, opts) {
+  return new Paragraph({
+    spacing: { after: (opts && opts.after) || 120 },
+    children: [
+      new TextRun({ text: label + ": ", bold: true }),
+      new TextRun({ text: value || "" }),
+    ],
   });
 }
 
@@ -131,7 +146,13 @@ const doc = new Document({
 
         heading1("Features"),
         italicNote("What's being built, in plain language — not a task list, a description of the capability."),
-        checkboxItem(), checkboxItem(), checkboxItem(),
+        checkboxItem(true), checkboxItem(true), checkboxItem(true),
+
+        heading1("Time Estimate"),
+        labelLine("Status", "Draft — pending developer confirmation"),
+        italicNote("Update to “Confirmed by [name], [date]” once a developer has reviewed the sizes above — that's what makes this something the team can be held accountable to later, not just a guess."),
+        labelLine("Legend", "S = 1-2 days   ·   M = 3-5 days   ·   L = 1-2 weeks   ·   XL = 2+ weeks (consider splitting into smaller features)"),
+        labelLine("Total estimate", "", { after: 240 }),
 
         heading1("Dependencies"),
         italicNote("What has to be true, decided, or already built before this can start? Include open questions, not just confirmed facts."),

@@ -70,8 +70,15 @@ What outcome does this create, and how does it tie back to the broader roadmap/v
 
 ## Features
 What's being built, in plain language.
-- [ ]
-- [ ]
+- [ ] — Size:
+- [ ] — Size:
+
+## Time Estimate
+Status: Draft — pending developer confirmation
+
+Legend: S = 1-2 days · M = 3-5 days · L = 1-2 weeks · XL = 2+ weeks (an XL is usually a sign to split the feature up)
+
+Total estimate: (sum of the sizes above via the legend, e.g. "roughly 2-3 weeks")
 
 ## Dependencies
 What has to be true, decided, or already built before this can start? Include open questions.
@@ -95,9 +102,11 @@ What needs to be written or updated as part of this?
 *(Nothing downstream — tickets, build — starts until this is checked off.)*
 ```
 
+Size each Features item S/M/L/XL relative to complexity, unknowns, and dependencies already surfaced above — don't guess a specific day count directly, sizing relatively is faster and avoids false precision. Sum the sizes via the legend into the total. You are proposing these sizes, not a developer, so the Time Estimate section always starts flagged "Draft — pending developer confirmation" — don't let it be read as a committed timeline until an actual developer has reviewed it.
+
 ## 6. Review and next steps
 
-Ask if anything needs adjusting. Never draft tickets until the sign-off line is filled in. Ask whether the user even wants a ticket breakdown drafted at all — it's optional, not everyone wants it. If yes, once signed off: draft one ticket per Features item, each with a description built from Objective/Goal/Dependencies and a QA checklist pulled directly from the relevant Risks table rows, and show the full proposed set as its own separate approval gate before anything is final. You have no ability to create tickets yourself in any tracker — the user copies the approved draft over manually, or pastes it into whatever tool they use. Note explicitly that the Risks table is a design-time guess, not a QA verification — it doesn't replace testing the real implementation once it's actually built, and the same person/model that wrote the spec shouldn't be the one grading whether the build satisfies it.
+Ask if anything needs adjusting. Explicitly ask whether a developer has reviewed the Time Estimate section yet — if not, say plainly it's a first-pass proposal, not a commitment, until one does; once a developer confirms or adjusts it, update the status line to "Confirmed by [name], [date]," changing any sizes they revised. This status line is the accountability record for later. Never draft tickets until the sign-off line is filled in. Ask whether the user even wants a ticket breakdown drafted at all — it's optional, not everyone wants it. If yes, once signed off: draft one ticket per Features item, each with a description built from Objective/Goal/Dependencies and a QA checklist pulled directly from the relevant Risks table rows, and show the full proposed set as its own separate approval gate before anything is final. You have no ability to create tickets yourself in any tracker — the user copies the approved draft over manually, or pastes it into whatever tool they use. Note explicitly that the Risks table is a design-time guess, not a QA verification — it doesn't replace testing the real implementation once it's actually built, and the same person/model that wrote the spec shouldn't be the one grading whether the build satisfies it.
 
 ---
 

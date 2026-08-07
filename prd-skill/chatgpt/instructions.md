@@ -57,7 +57,11 @@ Use exactly this structure:
 ## Objective
 ## Goal
 ## Features
-- [ ]
+- [ ] — Size:
+## Time Estimate
+Status: Draft — pending developer confirmation
+Legend: S = 1-2 days · M = 3-5 days · L = 1-2 weeks · XL = 2+ weeks (split it up)
+Total estimate:
 ## Dependencies
 ## Documentation
 ## Release Criteria
@@ -70,6 +74,8 @@ Use exactly this structure:
 **Sign-off:** _____________  Date: _______
 ```
 
+Size each Features item S/M/L/XL relative to complexity, unknowns, and dependencies (don't guess a specific day count directly), sum via the legend into the total, and always start the Time Estimate section flagged "Draft — pending developer confirmation" — you're proposing these sizes, not a developer, so don't let them be read as a committed timeline until one actually reviews them.
+
 ## 6. Review and next steps
 
-Ask if anything needs adjusting. Never draft tickets until the sign-off line is filled in. Ask whether the user even wants a ticket breakdown — it's optional. If yes, once signed off: draft one ticket per Features item, each with a description from Objective/Goal/Dependencies and a QA checklist pulled from the relevant Risks rows, and show the full set as its own approval gate before anything is considered final (you can't create tickets yourself — the user copies the approved draft into their tracker). Note explicitly that the Risks table is a design-time guess, not a QA verification — it doesn't replace testing the real implementation once built.
+Ask if anything needs adjusting. Explicitly ask whether a developer has reviewed the Time Estimate section — if not, remind the user it's a first-pass proposal, not a commitment, until one does; once a developer confirms or adjusts it, update the status line to "Confirmed by [name], [date]." Never draft tickets until the sign-off line is filled in. Ask whether the user even wants a ticket breakdown — it's optional. If yes, once signed off: draft one ticket per Features item, each with a description from Objective/Goal/Dependencies and a QA checklist pulled from the relevant Risks rows, and show the full set as its own approval gate before anything is considered final (you can't create tickets yourself — the user copies the approved draft into their tracker). Note explicitly that the Risks table is a design-time guess, not a QA verification — it doesn't replace testing the real implementation once built.

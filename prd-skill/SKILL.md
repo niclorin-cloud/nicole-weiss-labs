@@ -1,6 +1,6 @@
 ---
 name: prd
-description: Write or update a Product Requirements Document (PRD) using a context-first, non-happy-path-driven workflow. Asks upfront what tools you actually use (ticket tracker, wiki/docs, codebase access) instead of assuming any specific stack, pulls real context before asking questions, runs a mandatory failure-mode interrogation before drafting, and outputs a PRD in a fixed template with acceptance criteria, a risk table, and a sign-off line. Optionally drafts tickets in your tracker after a second, separate approval gate — entirely skippable if you don't want that. Use whenever asked to write a PRD, spec a feature/initiative, or check whether existing work already covers a feature end-to-end (a "retroactive" PRD).
+description: Write or update a Product Requirements Document (PRD) using a context-first, non-happy-path-driven workflow. Asks upfront what tools you actually use (ticket tracker, wiki/docs, codebase access) instead of assuming any specific stack, pulls real context before asking questions, runs a mandatory failure-mode interrogation before drafting, and outputs a PRD in a fixed template with acceptance criteria, a risk table, a per-feature time estimate, and a sign-off line. Optionally drafts tickets in your tracker after a second, separate approval gate — entirely skippable if you don't want that. Use whenever asked to write a PRD, spec a feature/initiative, check whether existing work already covers a feature end-to-end (a "retroactive" PRD), or when non-technical stakeholders need a time/effort estimate for implementation.
 ---
 
 # PRD Skill
@@ -104,8 +104,15 @@ What outcome does this create, and how does it tie back to the broader roadmap/v
 
 ## Features
 What's being built, in plain language — not a task list, a description of the capability.
-- [ ]
-- [ ]
+- [ ] — **Size:**
+- [ ] — **Size:**
+
+## Time Estimate
+**Status:** Draft — pending developer confirmation
+
+**Legend:** S = 1-2 days · M = 3-5 days · L = 1-2 weeks · XL = 2+ weeks (an XL is usually a sign to split the feature into smaller pieces)
+
+**Total estimate:** (sum of the sizes above via the legend, e.g. "roughly 2-3 weeks")
 
 ## Dependencies
 What has to be true, decided, or already built before this can start? Include open questions, not just confirmed facts — an unresolved dependency belongs here, written down, not discovered mid-build. Include dependencies found in step 2 even if they weren't expressed as a formal tracker relation.
@@ -134,9 +141,12 @@ Every state a user could actually hit — error screens, timeouts, partial failu
 
 This matches the structure in `templates/notion-prd-template.md` and `templates/PRD-Template.docx`, so the output can go straight into either without reformatting.
 
+**Filling in Time Estimate.** This section exists because a PRD is frequently read by people who have never worked with developers before — a time estimate gives them something concrete to plan around, and gives the team something to hold itself accountable to later if delivery slips. Size each Features checklist item S/M/L/XL relative to its complexity, unknowns, and dependencies (something blocked on an open question or another team should size up, not down) — don't guess a specific day count directly, since sizing relatively is faster and avoids false precision from whoever is doing the estimating. Sum the sizes via the legend into the total. Critically: you are proposing these sizes, not a developer, so the section always starts flagged `Draft — pending developer confirmation` — never present it to a stakeholder as a committed timeline until an actual developer has reviewed it (see step 6).
+
 ### 6. Review and next steps
 
 - Ask if anything needs adjusting before you consider it final.
+- **Time Estimate confirmation gate**: explicitly ask whether a developer has reviewed the Time Estimate section yet. If not, say plainly that the sizes and total are a first-pass proposal and shouldn't go to stakeholders as a committed timeline until a developer confirms or adjusts them. Once a developer has (in this conversation or reported back by the user), update the status line from `Draft — pending developer confirmation` to `Confirmed by [name], [date]`, adjusting any sizes that changed. This status line is the accountability record — what was proposed vs. what was actually signed off on — so don't skip updating it once confirmation happens.
 - If a wiki/doc tool is connected and reachable, offer to create the page directly there rather than leaving it as a standalone file.
 - Never create or edit tickets while the PRD is still in draft or pending sign-off — ticket work only starts after the sign-off line is actually filled in.
 - **Ticket drafting is optional.** Ask the user whether they want a ticket breakdown drafted at all — some people just want the document. If yes: once signed off, draft a proposed ticket breakdown from the document and show it in chat before creating anything — one ticket per discrete piece of work in Features, each with a description built from the relevant Objective/Goal/Dependencies context, and a non-happy-path/QA checklist pulled directly from the rows in the Non-Happy-Path/Risks table that apply to that ticket (pulled, not re-invented, and not skipped). Show the full proposed set — titles, descriptions, and which risk rows feed which ticket's QA checklist — as its own explicit approval gate, separate from the PRD sign-off itself.

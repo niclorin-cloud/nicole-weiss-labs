@@ -1,6 +1,8 @@
 # PRD Skill
 
-A structured workflow for writing Product Requirements Documents: it asks what tools and access you actually have before assuming anything, pulls real context before asking you questions, forces a non-happy-path interrogation before the document is considered done, and outputs a fixed template with acceptance criteria, a risk table, and a sign-off line. Ticket drafting (with a second, separate approval gate) is available afterward if you want it — entirely optional.
+A structured workflow for writing Product Requirements Documents: it asks what tools and access you actually have before assuming anything, pulls real context before asking you questions, forces a non-happy-path interrogation before the document is considered done, and outputs a fixed template with acceptance criteria, a per-feature time estimate, a risk table, and a sign-off line. Ticket drafting (with a second, separate approval gate) is available afterward if you want it — entirely optional.
+
+The time estimate exists mainly for non-technical stakeholders who haven't worked with developers before — it sizes each feature (S/M/L/XL, translated to a day range) and rolls up to a total, but it's always flagged "Draft — pending developer confirmation" until an actual developer reviews it, so it can't be mistaken for a commitment nobody signed off on.
 
 This isn't a generic "write me a PRD" prompt. The two things it's built to force are: matching whatever template your team has actually agreed to use, and never letting a feature ship without someone having explicitly thought through what happens when it fails, is empty, times out, gets retried, gets bad input, is called by the wrong person, or quietly does more than it was asked to.
 
