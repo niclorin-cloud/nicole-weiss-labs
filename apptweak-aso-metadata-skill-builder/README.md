@@ -20,15 +20,19 @@ You answer a short series of questions about your app, your rules and how you wo
 
 ## Setup
 
-Copy the `apptweak-aso-metadata-skill-builder/` folder into wherever your Claude setup loads skills from, or add `SKILL.md` as a skill in your client. Check your client's docs for the exact path, since it varies by product and version. Then ask Claude to build an ASO metadata skill for your app, and it will start the interview.
+This folder is a Claude plugin. Install it from the plugin directory once it is published, or point your client at this folder (it holds `.claude-plugin/plugin.json`). Then ask Claude to build an ASO metadata skill for your app, and it will start the interview.
 
 ## What's in this folder
 
 ```
 apptweak-aso-metadata-skill-builder/
-├── SKILL.md    The builder skill: interview, template and learning rules
-├── README.md   This file
-└── LICENSE     MIT
+├── .claude-plugin/
+│   └── plugin.json                                  Plugin manifest
+├── skills/
+│   └── apptweak-aso-metadata-skill-builder/
+│       └── SKILL.md                                 The builder skill: interview, template and learning rules
+├── README.md                                        This file
+└── LICENSE                                          MIT
 ```
 
 ## A note on the generated skill
