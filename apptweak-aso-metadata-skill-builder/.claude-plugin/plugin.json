@@ -1,0 +1,12 @@
+{
+  "name": "apptweak-aso-metadata-skill-builder",
+  "version": "1.0.0",
+  "description": "Interview-driven builder that generates your own app-specific ASO metadata review skill (App Store and Google Play) on the AppTweak MCP, with a philosophy section and rules that keep learning.",
+  "author": {
+    "name": "Nicole Weiss"
+  },
+  "homepage": "https://github.com/niclorin-cloud/nicole-weiss-labs/tree/main/apptweak-aso-metadata-skill-builder",
+  "repository": "https://github.com/niclorin-cloud/nicole-weiss-labs",
+  "license": "MIT",
+  "keywords": ["aso", "app-store", "google-play", "apptweak", "metadata"]
+}
